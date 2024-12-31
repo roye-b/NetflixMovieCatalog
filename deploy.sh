@@ -1,15 +1,8 @@
 #!/bin/bash
-
-sudo apt update && sudo apt upgrade -y
-
-cd ~/app || exit
-
-npm install
-npm run build
-
-#  (Systemd)
-sudo cp netflix-movie-catalog.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable netflix-movie-catalog.service
-sudo systemctl restart netflix-movie-catalog.service
+sudo  systemctl daemon-reload
+sudo systemctl stop Netflix_instance_UP.service
+sudo systemctl start Netflix_instance_UP.service
+if [ -e /home/roye/Desktop/roye-key.pem ]; then
+  rm /home/roye/Desktop/roye-key.pem
+fi
 # TODO your deploy script implementation...
