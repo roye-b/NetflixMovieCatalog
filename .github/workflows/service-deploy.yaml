@@ -39,4 +39,5 @@ jobs:
 
           ssh -i roye-key.pem ubuntu@$EC2_PUBLIC_IP "bash /home/ubuntu/app/deploy.sh"
           #
+          #
 
